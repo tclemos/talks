@@ -1,0 +1,199 @@
+COMO ASSIM?
+Desafios que encontrei quando conheci GO
+4 Oct 2019
+
+Thiago Lemos
+Engenheiro de Software, Lana
+tclemos@outlook.com
+@tclemos
+http://github.com/tclemos
+https://www.linkedin.com/in/tclemos/
+
+* Por quê escolhi Go?
+
+* 
+.image img/money.jpg _ 700
+: encontrei um benchmark de salários onde Go era a linguagem mais bem paga
+
+* O que eu já tinha
+- *15*anos* de experiência em desenvolvimento de software
+- Bom conhecimento em *C#* e *Javascript*
+- Algum conhecimento em *C++*, *VB.Net*, *VB* e *ASP*
+
+* Motivos
+- Profissionais conhecidos indo trabalhar com Go
+- Conversa entre amigos
+- Parecido com o que eu já conhecia
+- Projetos grandes feitos em Go
+- Momento atual do Go no Brasil
+- Investimento profissional
+- Curiosidade
+- Google
+: Indo trabalhar em empresa de games
+: Projetos como Docker 
+
+* Onde eu comecei
+Youtube
+.image img/learngo.png _ 900
+.caption _Da_pra_aprender_em_6_minutos_se_você_colocar_a_velocidade_em_2x_
+.caption [[https://www.youtube.com/watch?v=C8LgvuEBraI]]
+Hacker Rank
+- Repetindo exercícios já feitos em outras linguagens
+
+* 
+.image img/lovego.png _ 600
+
+* 
+.image img/linkedin.jpg _ 950
+
+* 
+.image img/linkedinp.png _ 900
+
+
+* E logo depois, entrevista!
+.image img/cabify.png _ 600
+.image img/lana.png _ 450
+Agora vai!
+
+* Iniciando em Go
+
+* O que é GOPATH? é de comer?
+
+* GOPATH
+.image img/doit.jpg _ 700 
+.caption golang.org: _The_GOPATH_environment_variable_specifies_the_location_of_your_workspace._
+
+* Uma biblioteca e um comando, os dois a 80km/h...
+
+* O que é igual entre biblioteca e comando
+- Ambos são pacotes
+- São escritos da mesma forma
+- Podem viver no mesmo projeto ou não
+
+* Biblioteca
+- o nome da biblioteca é o nome do pacote
+- não foi feita para ser utilizada sozinha, deve ser usado como dependência
+- o principal objetivo é complementar outros pacotes
+- não pode ser instalado
+
+* Biblioteca
+.code code/lib/lib.go
+
+* Comando
+- o commando tem o nome da pasta
+    /cmd/comando/main.go -> $ ./comando argumento
+- sempre tem o *pacote*main* e a *função*main*
+- trata argumentos de entrada
+- por convenção colocamos na pasta *cmd*
+- pode ser instalado
+
+* Comando
+.code code/cmd/main.go
+
+* Mas e uma função e um método, os dois a 80km/h...
+
+* Funcão
+- É definida diretamente dentro de um pacote
+Main
+.code code/cmd/main.go /^func main/,/^}/
+CriarAlgo
+.code code/lib/lib.go /^func CriarAlgo/,/^}/
+: me lembra uma função estática, usa o estado do pacote
+
+* Método
+- É definida relacionando um type
+CriarAlgo
+.code code/lib/lib.go /^func \(a/,/^}/
+: me lembra uma função estática, usa o estado do pacote
+
+* Tudo bem, mas cadê o try/catch?
+
+* Tratamento de erro
+- É normal retornar mais de um valor por função
+- É muito raro uma função nao retornar valor
+- Você é praticamente obrigado a tratar os erros, o que é bom!
+: me ajudou a ter logs melhores em produção
+: enxergar pontos de falha de forma mais explícita
+
+* E como que eu organizo um projeto além do main.go?
+
+* 
+- Um projeto Go é organizado em *pacotes*
+- Não é permitido mais de um pacote na mesma pasta
+- Tem gente que gosta da pasta *pkg* 
+- Tem gente que não gosta e coloca tudo no diretório raíz
+- Dependendo do tamanho do projeto, vai tudo no diretório raíz mesmo
+- Todos os arquivos de um pacote devem especificar o nome do pacote na primeira linha
+- A pasta raiz de um pacote serve apenas para manter os arquivos juntos caso o pacote não seja um comando
+
+* Ok, mas o que é um pacote???
+
+* Pacote
+Pacote é o conjunto de funcionalidades que resolvem um problema específico de forma a abstrair toda a complexidade deste problema
+.caption Lemos, Thiago - 2019
+- http
+- encoding
+- os
+- fmt
+- crypto
+
+* E como eu adiciono um pacote como dependência do meu pacote?
+
+* Uso de dependências
+- Dependências são todas fornecidas através de repositórios
+- São definidas como *imports* em cada arquivo do pacote
+- O *import* deve especificar o *caminho*para*o*repositório* ou o *nome*da*biblioteca* do Go
+.code code/import/echo.go /^import/,/^\)/
+- É necessário ter acesso ao código fonte da dependência
+- É complicado gerenciar versões sem usar *Go*Modules*
+- *go get* será seu parceiro nessa jornada
+
+* E as coleções, como usa?
+
+* Coleções
+- Tem Array, HasMap(HashTable), Slice e Channel
+- Não tem *HasSet*, o mais perto disso é algo como:
+    map[{type}]bool
+- Usamos funções reservadas para trabalhar com coleções
+- *make()* para criar
+- *len()* para saber o tamanho utilizado
+- *cap()* para saber o tamanho alocado
+
+* E...cade as funções select, map, filter, where
+
+* Coleções
+Não tem, mas você pode implementar, sabe por quê? Por que *AINDA* não tem generics.
+.image img/generics.png _ 700
+
+* Mas olha só, tem interface{} e []byte
+
+* 
+.image img/interface.gif _ 900
+
+* Falando em interfaces...
+
+* Interfaces
+.code code/interface/main.go /^type Peça/,/^}/
+- Interfaces em Go não precisam ser diretamente acopladas a estruturas
+- Desde que o seu objeto obedeça o que uma interface exige, ele pode ser utilizado
+- O uso recomendado de interfaces é que a mesma defina apenas 1 método
+- Caso você precise de mais métodos, você pode usar *type*composition*
+- O nome da interface geralmente representa o sujeito e o método a ação
+
+* Interfaces
+Cavalo
+.code code/interface/main.go /^type Cavalo/,/^func \(c Cavalo/
+Peão
+.code code/interface/main.go /^type Peão/,/^func \(p Peão/
+Torre
+.code code/interface/main.go /^type Torre/,/^func \(t Torre/
+
+* Interfaces
+Game
+.code code/interface/main.go /^type Game/,/^func \(g Game/
+
+
+* 
+* Vários sabores da cláusula *for*?
+* Atribuição de variável na cláusula *if*?
+* Channels e Go Routines
