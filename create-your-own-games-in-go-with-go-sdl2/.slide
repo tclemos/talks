@@ -1,0 +1,108 @@
+Create your own games in Go with go-sdl2
+7 Oct 2019
+
+Thiago Lemos
+
+tclemos@outlook.com
+
+@tclemos
+
+http://github.com/tclemos
+
+https://www.linkedin.com/in/tclemos/
+
+http://github.com/tclemos/talks/
+
+* Today we are going to learn how to create something like this in Go with go-sdl2
+.video vid/flappy-gopher-w-trunks.mov video/mp4 _ 800
+
+* Ok, but what is go-sdl2?
+
+* 
+.image img/gosdl2.png _ 950
+.caption [[https://github.com/veandco/go-sdl2]]
+
+* Ok, so what is SDL2?
+
+* 
+.image img/sdl2.png _ 850
+.caption [[https://www.libsdl.org/index.php]]
+
+* Why did I choose SDL2?
+
+* 
+.image img/youtube.png _ 600
+.caption [[https://www.youtube.com/playlist?list=PLOXvU5Ov-cqpjd1_OnczdizY0I64OfH-T]]
+
+* SDL Language Bindings
+*C#* - 
+SDL2# - [[https://github.com/flibitijibibo/SDL2-CS]]
+
+*Go*
+go-sdl2 - [[https://github.com/veandco/go-sdl2]]
+
+*Python*
+pygame_sdl2 - [[https://github.com/renpy/pygame_sdl2]]
+Py-SDL2 - [[https://bitbucket.org/marcusva/py-sdl2]]
+pysdl2-cffi - [[https://pythonhosted.org/pysdl2-cffi]]
+
+*Rust*
+Rust-SDL2 - [[https://github.com/AngryLawyer/rust-sdl2]]
+
+* What motivated me to develop a game and why did I choose Go for that?
+
+* Basically it as a sequence of factors
+- I love playing games
+- I always wanted to create a game and I already did something in the past.
+- It's way easier to explain what I do to my kids with a game instead of an API.
+- It is easier to study when it is funny
+- I'm currently studying and working with Go, making a game was a good excuse to convince me to learn more about it.
+
+* Why did I choose flappy bird as a theme for my game?
+
+* The Coding Train
+.image img/thecodingtrain.png _ 900
+.caption [[https://thecodingtrain.com/]]
+
+* GopherCon 2019 
+.video vid/game-gophercon.mp4 video/mp4 500 500
+.caption [[https://twitter.com/gopherconbrasil/status/1177628907429941249]]
+
+* A game structure in go looks basically this
+.image img/daniela.png _ 100 
+.caption [[https://github.com/danicat/pacgo]]
+.code code/basic-game-structure.go
+
+* Initializing
+.code code/init-game.go 
+
+* Some SDL2 functions
+
+* Listen to events
+.code code/sdl2-funcs.go /^func \(g \*Game\) checkPollEvents\(\) {/,/^}/
+
+* Keyboard state
+.code code/sdl2-funcs.go /^func \(g \*Game\) checkKeys\(\) {/,/^}/
+
+* Rendering something to the screen
+.code code/sdl2-funcs.go /^func \(g \*Game\) drawBackGround\(\) {/,/^}/
+.code code/sdl2-funcs.go /^func \(g \*Game\) drawTexture\(\) {/,/^}/
+
+* Things I've learned during this journey so far
+- Go routines
+- Math
+- Design
+- UX
+- Components
+- Choices between a Copy or a Pointer
+
+* Developing a game in Go brought to my life things like:
+- I'm becoming a better professional.
+- I'm understanding better the Go language.
+- I'm motivated with the things that I know about and do on a daily basis.
+- I'm closer to my kids and now they are interested about what I do and are proud of it.
+- I've got noticed by the community and I'm participating.
+- I had a good time doing this, it is like a terapy.
+
+* Get motivated!
+- Start doing something that is funny
