@@ -21,10 +21,10 @@ http://github.com/tclemos/talks/
 - Crazy projects
 - Bug fixes
 - Adding Tests
-- I can't help because I'm not capable
-- There are only BIG projects that are open source
+- I'm not sure I can help
+- Only BIG projects are open source
 
-* You know what? It is just FUN!
+* Then I realized it is just FUN!
 
 * I have an invitation for you!
 
@@ -32,7 +32,11 @@ http://github.com/tclemos/talks/
 .image img/avengers.png _ 900
 
 * 
-.image img/hf2019.png _ 800
+.image img/hf2019.png _ 900
+.caption [[https://hacktoberfest.digitalocean.com/]]
+
+* 
+.image img/qrcode.png _ 400
 .caption [[https://hacktoberfest.digitalocean.com/]]
 
 * What if I tell you, that you can start having FUN right now?
@@ -43,7 +47,9 @@ http://github.com/tclemos/talks/
 
 * This an open source game, made with Go!
 
-* Let me show how it works.
+* It helped me a lot learning how to Go and can also help you!
+
+* But, just to give you an idea how this project evolved over the time
 
 * We started this way, this was the first version ever.
 .video vid/flappy-gopher-first-version.mp4 video/mp4 _ 800
@@ -57,27 +63,30 @@ http://github.com/tclemos/talks/
 * Up in the sky, look: It's a bird. It's a plane. It's SuperGopher!
 .video vid/flappy-gopher-w-grass.mov video/mp4 _ 800
 
-* Holy s**t, now we have textures for the trunks!!
+* Holy s**t, now we have textures for the trunks with dynamic sizes!
 .video vid/flappy-gopher-w-trunks.mov video/mp4 _ 800
 
-* But I still need help to:
-- Add collision - [[https://github.com/tclemos/flappy-gopher/issues/1]]
+* And you may ask, BUT HOW CAN I HELP WITH THIS PROJECT??
+
+* This game still need:
+- Collision - [[https://github.com/tclemos/flappy-gopher/issues/1]]
 - Game Score - [[https://github.com/tclemos/flappy-gopher/issues/2]]
 - Scoreboard - [[https://github.com/tclemos/flappy-gopher/issues/3]]
+.image img/flappyqr.png _ 300
 
-* Other ideas
+* Or maybe we can get things a little bit wild
 - A player sprite with animations(moving cape, acrobatics)
 - Other elements flying around(birds, planes)
 - Daylight changes, day, night, afternoon, sunset, sunrise
 - A moving trunk after the first 10
 - A tighter trunk
 - A random item that can be collected and works like Mario star
-- A random item that give the player extra points
-- Lifes(chances) to continue
+- A random item that add extra points
+- Life system (chances) to continue
 - Ability to continue by exchanging part of the current score by a new chance
 - Sound effects
 - Background music
 
 * Also, maybe you'll find a better way to do something that is already implemented
-* The point is, support open source projects and have FUN!
+* The point is, enjoy open source and have FUN!
 
