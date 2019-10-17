@@ -197,3 +197,6 @@ Game
 * Vários sabores da cláusula *for*?
 * Atribuição de variável na cláusula *if*?
 * Channels e Go Routines
+
+Just figured out an issue when reusing variables and creating new ones on the same line using `:=`, if there is a different scope in this process, a new variable is created instead of using the previously created! :scream:
+https://twitter.com/tclemos/status/1184860312576647168
